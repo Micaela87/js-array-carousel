@@ -25,6 +25,7 @@ h1 {
 /* rules for bigger image */
 .items {
     width: 51%;
+    height: 27rem;
 }
 
 .item {
@@ -32,13 +33,14 @@ h1 {
     text-align: right;
     color: white;
     width: 100%;
-    height: fit-content;
+    height: 100%;
     display: none;
 }
 
 .item img {
     width: 100%;
     object-fit: cover;
+    height: 100%;
 }
 
 /* rules for text over bigger image */
