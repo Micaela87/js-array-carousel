@@ -52,10 +52,13 @@ for (let i = 0; i < items.length; i++) {
 }
 
 // selects and displays the first bigger picture
-document.getElementsByClassName('item')[0].classList.add('active');
+const itemsArray = document.getElementsByClassName('item');
+
+itemsArray[0].classList.add('active');
 
 // selects and displays the first smaller picture
-document.getElementsByClassName('thumb')[0].classList.add('active');
+const thumbsArray = document.getElementsByClassName('thumb');
+thumbsArray[0].classList.add('active');
 
 // sets a counter to select previous or next picture
 let counter = 0;
@@ -64,13 +67,17 @@ let counter = 0;
 document.querySelector('.prev').addEventListener('click',
 
     function() {
-        document.getElementsByClassName('item')[counter].classList.remove('active');
-        document.getElementsByClassName('thumb')[counter].classList.remove('active');
+        itemsArray[counter].classList.remove('active');
+        thumbsArray[counter].classList.remove('active');
 
-        ++counter;
+        if (counter === itemsArray.length - 1) {
+            counter = 0;
+        } else {
+            ++counter;
+        }
 
-        document.getElementsByClassName('item')[counter].classList.add('active');
-        document.getElementsByClassName('thumb')[counter].classList.add('active');
+        itemsArray[counter].classList.add('active');
+        thumbsArray[counter].classList.add('active');
 
     }
 
@@ -79,13 +86,17 @@ document.querySelector('.prev').addEventListener('click',
 document.querySelector('.next').addEventListener('click', 
 
     function() {
-        document.getElementsByClassName('item')[counter].classList.remove('active');
-        document.getElementsByClassName('thumb')[counter].classList.remove('active');
+        itemsArray[counter].classList.remove('active');
+        thumbsArray[counter].classList.remove('active');
 
-        --counter;
+        if (counter === 0) {
+            counter = itemsArray.length -1;;
+        } else {
+            --counter;
+        }
 
-        document.getElementsByClassName('item')[counter].classList.add('active');
-        document.getElementsByClassName('thumb')[counter].classList.add('active');
+        itemsArray[counter].classList.add('active');
+        thumbsArray[counter].classList.add('active');
     }
 
 );
