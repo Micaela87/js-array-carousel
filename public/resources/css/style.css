@@ -67,13 +67,14 @@ h1 {
 }
 
 .thumb {
-    height: 19%;
+    height: 5.4rem;
     opacity: 0.5;
+    overflow: hidden;
 }
 
 .thumb img {
     width: 100%;
-    height: auto;
+    height: 5.4rem;
     object-fit: cover;
 }
 
