@@ -63,13 +63,14 @@ thumbsArray[0].classList.add('active');
 // sets a counter to select previous or next picture
 let counter = 0;
 
-// adds click event on arrow up
-document.querySelector('.prev').addEventListener('click',
+// adds click event on arrow down
+document.querySelector('.next').addEventListener('click',
 
     function() {
         itemsArray[counter].classList.remove('active');
         thumbsArray[counter].classList.remove('active');
 
+        // resets counter
         if (counter === itemsArray.length - 1) {
             counter = 0;
         } else {
@@ -83,12 +84,14 @@ document.querySelector('.prev').addEventListener('click',
 
 )
 
-document.querySelector('.next').addEventListener('click', 
+// adds click event on arrow up
+document.querySelector('.prev').addEventListener('click', 
 
     function() {
         itemsArray[counter].classList.remove('active');
         thumbsArray[counter].classList.remove('active');
 
+        // resets counter
         if (counter === 0) {
             counter = itemsArray.length -1;;
         } else {
